@@ -1,0 +1,21 @@
+name: "ECS Stable Services Action"
+description: "Waits for a ECS service to become stable"
+inputs:
+   accesskey:
+    description: "AWS Access Key"
+    required: true
+  secretKey:
+    description: "AWS Secret Key"
+    required: true
+  cluster:
+    description: "Cluster ARN"
+    required: true
+  service:
+    description: "Service name"
+    required: true
+  attempts:
+    description: "Max number of attempts to call ecs wait services-stable. Each call is waited for 15 seconds"
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
